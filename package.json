@@ -1,6 +1,6 @@
 {
   "name": "npm-run-lock",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Prevents duplicate execution of scripts with the same name.",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
