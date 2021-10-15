@@ -1,0 +1,38 @@
+{
+  "name": "npm-run-lock",
+  "version": "0.9.0",
+  "description": "Prevents duplicate execution of scripts with the same name.",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "bin": {
+    "lock": "dist/main.js"
+  },
+  "scripts": {
+    "lint:prettier": "prettier src --check",
+    "lint:eslint": "eslint src",
+    "lint": "run-p lint:*",
+    "fix:prettier": "npm run lint:prettier -- --write",
+    "fix:eslint": "npm run lint:eslint -- --fix",
+    "fix": "run-s fix:*",
+    "compile": "tsc",
+    "exec": "node dist/main.js tsc -w",
+    "routine": "run-s fix compile exec",
+    "monitor": "nodemon -e ts --ignore \"dist/*\" --exec \"npm run routine\""
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.2",
+    "@types/node": "^16.11.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.1",
+    "nodemon": "^2.0.13",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "cac": "^6.7.11",
+    "chalk": "^4.1.2",
+    "cross-spawn": "^7.0.3"
+  }
+}
