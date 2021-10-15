@@ -9,7 +9,7 @@ Addition of command to suppress multiple launch of npm script.
 ### syntax - cmd
 
 ```
-lock {...commandAndArguments}
+lock [...commandAndArguments]
 ```
 
 ### example - package.json
@@ -17,7 +17,7 @@ lock {...commandAndArguments}
 ```json:package.json
 {
   "scripts": {
-    "exec": "lock tsc -w",
+    "watch": "lock tsc -w",
     ...
   },
   ...
