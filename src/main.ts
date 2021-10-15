@@ -19,7 +19,6 @@ const ProcessLocker = (command: string[], lockFilePath: string) => {
         const [head, ...tails] = command;
         spawn(head, tails, {
           env: process.env,
-          cwd: __dirname,
           stdio: "inherit",
         }).on("exit", (code) => (code ? resolve(code) : reject(code)));
       }),
